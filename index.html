@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d1b">
+<title>NEXORA AI — Your Personal AI Assistant</title>
+<meta name="description" content="NEXORA AI is your personal AI assistant for chat, YouTube ideas, writing and reminders.">
+<style>
+:root{--bg:#080d1b;--panel:#111a2d;--panel2:#17233a;--line:#263653;--text:#edf4ff;--muted:#9aabc7;--blue:#66a9ff;--cyan:#5ce1e6}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#17335b 0,transparent 48%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{height:72px;border-bottom:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100vw - 1120px)/2))}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.7px;font-size:19px}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#6caaff,#64e3df);display:grid;place-items:center;color:#071326;font-size:23px}
+.status{font-size:12px;color:#9edfcf;border:1px solid #2b665b;padding:7px 11px;border-radius:30px}
+main{max-width:1120px;margin:auto;padding:35px 20px 60px}.hero{text-align:center;margin:20px auto 28px}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:700}.hero h1{font-size:clamp(34px,6vw,58px);margin:10px 0;background:linear-gradient(90deg,#fff,#8fc4ff,#78e5df);color:transparent;background-clip:text}.hero p{color:var(--muted);margin:0}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:25px 0}.tab,button{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 15px;border-radius:12px;font-weight:600}.tab.active,.primary{background:linear-gradient(100deg,#347fe0,#18aeb7);border:0;color:white}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px}.panel{background:#101a2bdb;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 18px 55px #0003}.panel-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.panel-head strong{font-size:16px}.small{font-size:12px;color:var(--muted)}
+#chat{height:390px;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:13px}.bubble{max-width:88%;padding:12px 15px;border-radius:16px;white-space:pre-wrap;line-height:1.5}.bot{background:var(--panel2);border:1px solid var(--line);align-self:flex-start}.user{background:#245b9b;align-self:flex-end}
+.composer{padding:14px;border-top:1px solid var(--line);display:flex;gap:9px}.composer textarea{flex:1;resize:vertical;min-height:48px;max-height:130px;background:#0a1221;border:1px solid var(--line);border-radius:12px;color:white;padding:13px;font:inherit}.composer button{min-width:76px}
+.side{padding:17px}.side h3{margin:3px 0 13px}.feature{padding:12px;border:1px solid var(--line);border-radius:13px;margin:9px 0;background:#121f33}.feature b{display:block;margin-bottom:4px}.feature span{font-size:12px;color:var(--muted)}
+.tools{display:none;padding:20px}.tools.active{display:block}.tools input,.tools textarea{width:100%;background:#0a1221;border:1px solid var(--line);border-radius:11px;color:white;padding:12px;margin:7px 0 12px;font:inherit}.tools textarea{min-height:115px}.toolrow{display:flex;gap:8px;flex-wrap:wrap}.toolrow button{margin:4px 0}.reminder{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px;margin:8px 0}.reminder small{color:var(--muted)}
+footer{text-align:center;color:#71829e;font-size:12px;padding:25px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.side{order:2}header{padding:0 16px}main{padding:20px 13px 40px}.hero{margin-top:22px}#chat{height:48vh;min-height:300px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">✦</div>NEXORA AI</div><div class="status">● Personal AI Assistant</div></header>
+<main>
+<section class="hero"><div class="eyebrow">YOUR IDEAS. YOUR COMMANDS. YOUR AI.</div><h1>How can I help you today?</h1><p>Chat, create, plan and get things done — all in one place.</p></section>
+<nav class="tabs"><button class="tab active" data-tab="chatTab">✦ AI Chat</button><button class="tab" data-tab="youtubeTab">▶ YouTube Helper</button><button class="tab" data-tab="reminderTab">◷ Reminders</button></nav>
+<div class="layout">
+<section class="panel">
+<div id="chatTab">
+<div class="panel-head"><strong>✦ NEXORA Chat</strong><span class="small">AI powered</span></div>
+<div id="chat"><div class="bubble bot">Assalam-o-alaikum! I’m NEXORA AI. Ask me anything, or tell me what you want to create. 😊</div></div>
+<div class="composer"><textarea id="message" placeholder="Message NEXORA AI..." rows="1"></textarea><button class="primary" id="send">Send ➤</button></div>
+</div>
+<div id="youtubeTab" class="tools"><h2>▶ YouTube Helper</h2><p class="small">Create video ideas, titles, descriptions, tags and scripts. Add your topic below.</p><label>What is your video about?</label><textarea id="ytTopic" placeholder="e.g. Funny Sindhi village comedy with a donkey"></textarea><div class="toolrow"><button class="primary" data-prompt="Give me 10 catchy YouTube video ideas, titles, descriptions and hashtags for this topic: ">Video ideas</button><button data-prompt="Write an engaging YouTube script in simple Roman Urdu for this topic: ">Write script</button><button data-prompt="Create 5 clickable titles, an SEO-friendly description and relevant tags for this topic: ">Titles & SEO</button></div></div>
+<div id="reminderTab" class="tools"><h2>◷ My Reminders</h2><p class="small">Reminders are saved in this browser on this device. Keep this page open to receive alerts.</p><label>Reminder</label><input id="remText" placeholder="e.g. Upload YouTube video"><label>Date and time</label><input id="remWhen" type="datetime-local"><button class="primary" id="addReminder">Add reminder</button><div id="reminders"></div></div>
+</section>
+<aside class="panel side"><h3>What I can help with</h3><div class="feature"><b>✦ AI conversations</b><span>Ask questions, learn and brainstorm.</span></div><div class="feature"><b>▶ YouTube creator</b><span>Ideas, scripts, titles and descriptions.</span></div><div class="feature"><b>◷ Daily planning</b><span>Save reminders in your browser.</span></div><div class="feature"><b>✍ Writing assistant</b><span>Draft messages, captions and emails.</span></div><p class="small">For WhatsApp sending, account integrations and automatic web actions, a separate secure integration and your approval are required.</p></aside>
+</div></main><footer>© 2026 NEXORA AI · Independent personal assistant project</footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.toggle('active',x===t));['chatTab','youtubeTab','reminderTab'].forEach(id=>document.getElementById(id).style.display=id===t.dataset.tab?'block':'none')});
+const chat=document.getElementById('chat'),msg=document.getElementById('message');
+function bubble(text,who){const d=document.createElement('div');d.className='bubble '+who;d.textContent=text;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d}
+async function sendMessage(text){if(!text.trim())return;bubble(text,'user');const wait=bubble('Thinking…','bot');try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});const data=await r.json();if(!r.ok)throw new Error(data.error||'Request failed');wait.textContent=data.reply||'No reply received.'}catch(e){wait.textContent='AI connection is not set up yet: '+e.message+'. Add your Groq API key to the Cloudflare Pages environment variable GROQ_API_KEY, then redeploy.'}}
+document.getElementById('send').onclick=()=>{const t=msg.value;msg.value='';sendMessage(t)};msg.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();document.getElementById('send').click()}});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>{const topic=document.getElementById('ytTopic').value.trim();if(!topic){alert('Please enter a video topic first.');return}tabs[0].click();sendMessage(b.dataset.prompt+topic)});
+const KEY='nexora-reminders-v1';let reminders=JSON.parse(localStorage.getItem(KEY)||'[]');
+function renderReminders(){const box=document.getElementById('reminders');box.innerHTML='';reminders.forEach((r,i)=>{const el=document.createElement('div');el.className='reminder';const left=document.createElement('div');const b=document.createElement('b');b.textContent=r.text;const sm=document.createElement('small');sm.textContent=new Date(r.when).toLocaleString();left.append(b,document.createElement('br'),sm);const del=document.createElement('button');del.textContent='×';del.onclick=()=>{reminders.splice(i,1);save()};el.append(left,del);box.append(el)})}
+function save(){localStorage.setItem(KEY,JSON.stringify(reminders));renderReminders()}
+document.getElementById('addReminder').onclick=()=>{const text=document.getElementById('remText').value.trim(),when=document.getElementById('remWhen').value;if(!text||!when){alert('Enter a reminder and date/time.');return}reminders.push({text,when,notified:false});document.getElementById('remText').value='';save()};
+if('Notification'in window&&Notification.permission==='default')Notification.requestPermission();
+setInterval(()=>{const now=Date.now();reminders.forEach(r=>{if(!r.notified&&new Date(r.when).getTime()<=now){r.notified=true;if('Notification'in window&&Notification.permission==='granted')new Notification('NEXORA AI reminder',{body:r.text});else alert('Reminder: '+r.text)}});localStorage.setItem(KEY,JSON.stringify(reminders))},15000);renderReminders();
+</script></body></html>
